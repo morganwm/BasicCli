@@ -24,37 +24,7 @@ namespace BasicCli
     {
         bool Execute();
     }
-
-    public class ExitCommand : ICommand
-    {
-        public bool Execute()
-        {
-            return true;
-        }
-    }
-
-    public class ParrotCommand : ICommand
-    {
-        
-        public ParrotCommand(List<string> input)
-        {
-            input.ForEach(x => Console.WriteLine(x));
-        }
-        
-        public bool Execute()
-        {
-            return false;
-        }
-    }
-
-    public class nullCommand : ICommand
-    {
-        public bool Execute()
-        {
-            return false;
-        }
-    }
-
+    
     public static class Parser
     {
         public static ICommand Parse(string commandString) { 
@@ -67,16 +37,13 @@ namespace BasicCli
                 // Create command based on CommandName (and maybe arguments)
                 case "exit": 
                     return new ExitCommand();
-                    break;
 
                 case "parrot": 
                     return new ParrotCommand(args);
-                    break;
 
                 default:
                     Console.WriteLine("defaultcase");
                     return new nullCommand();
-                    break;
 
             }
         }  
