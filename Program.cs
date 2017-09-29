@@ -24,7 +24,7 @@ namespace BasicCli
     {
         bool Execute();
     }
-    
+
     public static class Parser
     {
         public static ICommand Parse(string commandString) { 

@@ -27,7 +27,7 @@ namespace BasicCli
         }
     }
 
-    public class nullCommand : ICommand
+    public class nullCommand : ICommand    
     {
         public bool Execute()
         {
